@@ -8,13 +8,13 @@
       name: docker.io
       state: present
    - name: Create new directory
-     become_user: ansadmin
+     become_user: root
      file:
       path: /home/ansadmin/target
       state: directory
    - name: Copy the source code to hosts
      copy: src=./{{ item }} dest=/home/ansadmin/target/
-     become_user: ansadmin
+     become_user: root
      with_items:
         - app
         - migrations
