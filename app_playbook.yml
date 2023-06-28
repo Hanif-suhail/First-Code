@@ -2,10 +2,7 @@
 - hosts: all
   become: yes
   vars_files: secret.yml
-  tasks:
-   - name: apt-update
-     apt:
-      update_cache: yes   
+  tasks:   
    - name: Install Docker
      apt:
       name: docker.io
