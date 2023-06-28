@@ -22,7 +22,7 @@ pipeline{
    		}
 		stage('invoke playbook'){
       			steps{
-				ansiblePlaybook credentialsId: 'Ansadmin', installation: 'AnsibleCont', inventory: '/home/ansadmin/My_ansible_NP/hosts', playbook: './app_playbook.yml', vaultCredentialsId: 'VaultID1'               			}
+				ansiblePlaybook credentialsId: 'Ansadmin', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', installation: 'AnsibleCont', playbook: './app_playbook.yml', vaultCredentialsId: 'VaultID1'               			}
    		}
 	}
 }
